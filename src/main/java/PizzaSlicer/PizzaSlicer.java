@@ -1,4 +1,4 @@
-package src.main.java.PizzaSlicer;
+package PizzaSlicer;
 import java.util.Scanner;
 
 public class PizzaSlicer {
@@ -7,13 +7,13 @@ public class PizzaSlicer {
         int slices = pizzas * slicesPer;
         int adultSlices = adults * 2;
 
-        if (adultSlices > slicesPer) { return notEnoughSlices(); };
+        if (adultSlices > slicesPer) { return notEnoughSlices(); }
 
         int childSlices = slices - adultSlices;
-        if (childSlices < children) { return notEnoughSlices(); };
+        if (childSlices < children) { return notEnoughSlices(); }
 
         int slicePerChild = childSlices / children;
-        if (slicePerChild < 1) { return notEnoughSlices(); };
+        if (slicePerChild < 1) { return notEnoughSlices(); }
 
         int leftover = childSlices - slicePerChild * children;
         leftover = (leftover < 0) ? 0 : leftover;

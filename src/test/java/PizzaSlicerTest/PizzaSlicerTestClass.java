@@ -1,11 +1,11 @@
-package src.test.java.PizzaSlicer;
+package PizzaSlicerTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import src.main.java.PizzaSlicer.PizzaSlicer;
+import PizzaSlicer.PizzaSlicer;
 
-public class PizzaSlicerTest {
+public class PizzaSlicerTestClass {
 
     @Test
     public void testEnoughSlicesForEveryone() {
