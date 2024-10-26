@@ -1,0 +1,22 @@
+# The Repo
+
+The purpose of this program is to demonstrate the use of testing cases, particularly JUnit Jupiter 5.
+The repo is implemented with a Java-21 Devcontainer and uses Gradle for test automation.
+
+# The Pizza Slicer
+
+The program takes a few inputs from the user in the console and returns data.
+|**Input**|||
+|---|:---:|---|
+|Total Pizzas|Int||
+|Slices per Pizza|Int||
+|Number of Adults|Int|Each adult gets 2 slices|
+|Number of Children|Int|The children split the remaining slices evenly|
+
+|**Output**|||
+|---|---|---|
+|Total Slices of Pizza|Int||
+|Slices for Adults|Int||
+|Slices for Children|Int||
+|Slices per Child|Int||
+|Leftover|Int|Slices cannot be split, so remaining slices are leftovers|
