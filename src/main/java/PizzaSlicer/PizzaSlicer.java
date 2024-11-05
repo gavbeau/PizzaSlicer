@@ -18,28 +18,27 @@ public class PizzaSlicer {
         int leftover = childSlices - slicePerChild * children;
         leftover = (leftover < 0) ? 0 : leftover;
 
-        return String.format("" +
-                "Total number of slices of pizza \t : %d%n" +
-                "Total number of slices for adults \t : %d%n" +
-                "Total number of slices for children \t : %d%n" +
-                "Number of slices per child \t\t : %d%n" +
-                "Number of slices left over \t\t : %d%n",
+        return String.format("""
+                Total number of slices of pizza \t : %d
+                Total number of slices for adults \t : %d
+                Total number of slices for children \t : %d
+                Number of slices per child \t\t : %d
+                Number of slices left over \t\t : %d
+                """,
                 slices,
                 adultSlices,
                 childSlices,
                 slicePerChild,
-                leftover
-                );
+                leftover);
     }
 
     private static String notEnoughSlices() {
         return "You did not purchase enough pizza. Do better.";
     }
 
-    public static void main(String[] args) {
-        
+    private static void getInput() {
         var con = System.console();
-        
+
         if (con != null) {
             try (Scanner in = new Scanner(con.reader())) {
                 System.out.println("Enter the number of pizzas purchased: ");
@@ -48,18 +47,23 @@ public class PizzaSlicer {
                 System.out.println("Enter number of slices per pizza: ");
                 int slicesPer = in.nextInt();
                 
-                
                 System.out.println("Enter number of adults: ");
                 int adults = in.nextInt();
-                
-                
                 
                 System.out.println("Enter number of children: ");
                 int children = in.nextInt();
                 
                 String result = calcSlices(pizzas, slicesPer, adults, children);
                 System.out.println(result);
+
+            } catch (Exception e) {
+                System.out.println("All input expected as an Integer");
+                getInput();
             }
         }
+    }
+
+    public static void main(String[] args) {
+        getInput();
     }
 }
